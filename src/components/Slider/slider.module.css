@@ -1,0 +1,33 @@
+/*Região do slide:*/
+
+.slidecontainer{
+    width: 100% !important;
+    position: relative !important;
+    height:300px !important;
+    border:4px solid #0D1321;
+    /*margin: -15px -20px 15px -20px !important; */
+    border-radius: 10px; 
+    box-shadow: 7px 5px 5px #333;
+    margin: 5px !important;
+}
+  
+.slidephoto{
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover;
+    border-radius: 5px;
+
+}
+
+.newsText {
+    position: absolute;
+    bottom: 10px;
+    border: 1px solid black;
+    background-color: #3c3c3c;
+    color: white;
+    font-size: medium;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 4px 3px 4px white;
+    margin: 10px;
+}
