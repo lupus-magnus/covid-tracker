@@ -33,7 +33,7 @@ export class Carousel extends Component {
 
     render() {
         let {news, active} = this.state;
-        if(news.length === 4){
+        if(news.length > 2){
             return (
                 <div className={styles.slidecontainer}>
                     <div id='slider'>
