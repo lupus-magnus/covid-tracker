@@ -44,7 +44,7 @@ export const fetchCountries = async () => {
 let keyGmail = '3234e3e9c25e458dae03ccec0b3d134a'
 let keyPoli = '9431beab82af4055b6fd0c27dd9b3d74'
 let keyList = [keyGmail,keyPoli]
-let urlNews = 'http://newsapi.org/v2/top-headlines?country=br&q=corona&from=2020-12-18&sortBy=popularity&apiKey=' + keyList[Math.floor(Math.random()*keyList.length)] +'&language=pt';
+let urlNews = 'https://newsapi.org/v2/top-headlines?country=br&q=corona&from=2020-12-18&sortBy=popularity&apiKey=' + keyList[Math.floor(Math.random()*keyList.length)] +'&language=pt';
 
 export const getNews = async () => {
     const response = await fetch(urlNews)
