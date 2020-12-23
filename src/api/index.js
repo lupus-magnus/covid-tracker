@@ -44,15 +44,15 @@ export const fetchCountries = async () => {
 let keyGmail = '3234e3e9c25e458dae03ccec0b3d134a'
 let keyPoli = '9431beab82af4055b6fd0c27dd9b3d74'
 let keyList = [keyGmail,keyPoli]
-let urlNews = 'newsapi.org/v2/top-headlines?country=br&q=corona&from=2020-12-18&sortBy=popularity&apiKey=' + keyList[Math.floor(Math.random()*keyList.length)] +'&language=pt';
+let urlNews = 'https://newsapi.org/v2/top-headlines?country=br&q=corona&from=2020-12-18&sortBy=popularity&apiKey=' + keyList[Math.floor(Math.random()*keyList.length)] +'&language=pt';
 let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 
 
 export const getNews = async () => {
     const request = new Request(proxyUrl+urlNews) //nova!
-    const response = await fetch(request) //nova
-    //const response = await fetch(urlNews)  essa era a que funcionava
+    const response = await fetch(request, {type: 'no-cors'}) //nova
     console.log('A request was just made to the News Api.')
+    console.log('response:', response)
     const data = await response.json()
     console.log('response: ', data)
     const modifiedData = data.articles.slice(0,4)
