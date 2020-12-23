@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getNews } from '../../api/index'
 import styles from '../Slider/slider.module.css'
-
+import genericImage from '../../../src/images/newspaper.jpg'
 
 export class Carousel extends Component {
     constructor(props) {
@@ -38,7 +38,7 @@ export class Carousel extends Component {
                 <div className={styles.slidecontainer}>
                     <div id='slider'>
                         <img className={styles.slidephoto} alt='foto da noticia'
-                            src={news[active%news.length].urlToImage}
+                            src={news[active%news.length].urlToImage.startsWith('https') ? news[active%news.length].urlToImage : genericImage}
                             name='slide' 
                         />
                         <a rel="noreferrer" target="_blank" href={news[active%news.length].url}><p className={styles.newsText}>{news[active%(news.length)].title}</p></a>
