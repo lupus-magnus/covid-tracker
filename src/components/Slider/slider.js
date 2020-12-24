@@ -33,6 +33,8 @@ export class Carousel extends Component {
 
     render() {
         let {news, active} = this.state;
+        //console.log(this.state.news[this.state.active%this.state.news.length].urlToImage.startsWith('https') ? this.state.news[this.state.active%this.state.news.length].urlToImage : genericImage)
+        
         if(news.length > 2){
             return (
                 <div className={styles.slidecontainer}>

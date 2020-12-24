@@ -4,6 +4,7 @@ body {
 }
 
 .container {
+    margin: -20px 5% !important;
     display: flex;
     align-items: center;
     justify-content: center;
