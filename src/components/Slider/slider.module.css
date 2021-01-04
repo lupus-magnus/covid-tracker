@@ -4,10 +4,11 @@
     width: 100% !important;
     position: relative !important;
     height:300px !important;
-    border:4px solid #0D1321;
+    border-top:4px solid #0D1321;
+    border-bottom:4px solid #0D1321;
     /*margin: -15px -20px 15px -20px !important; */
-    border-radius: 10px; 
-    box-shadow: 7px 5px 5px #333;
+    /*border-radius: 10px;*/ 
+    /*box-shadow: 7px 5px 5px #333;*/
     margin: 5px !important;
 }
   
@@ -15,7 +16,7 @@
     width: 100% !important;
     height: 300px !important;
     object-fit: cover;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
 
 }
 

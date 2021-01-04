@@ -38,15 +38,17 @@ export class Carousel extends Component {
         if(news.length > 2){
             return (
                 <div className={styles.slidecontainer}>
-                    <div id='slider'>
-                        <img className={styles.slidephoto} alt='foto da noticia'
-                            src={news[active%news.length].urlToImage.startsWith('https') ? news[active%news.length].urlToImage : genericImage}
-                            name='slide' 
-                        />
-                        <a rel="noreferrer" target="_blank" href={news[active%news.length].url}><p className={styles.newsText}>{news[active%(news.length)].title}</p></a>
+                    <a rel="noreferrer" target="_blank" href={news[active%news.length].url}>
+                        <div id='slider'>
+                            <img className={styles.slidephoto} alt='foto da noticia'
+                                src={news[active%news.length].urlToImage.startsWith('https') ? news[active%news.length].urlToImage : genericImage}
+                                name='slide' 
+                            />
+                            <p className={styles.newsText}>{news[active%(news.length)].title}</p>
+                            
                         
-                    
-                    </div>
+                        </div>
+                    </a>
                 </div>
             );
         } else {
