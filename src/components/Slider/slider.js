@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getNews } from '../../api/index'
+import { getNYTNews } from '../../api/index'
 import styles from '../Slider/slider.module.css'
 import genericImage from '../../../src/images/newspaper.jpg'
 
@@ -21,30 +21,32 @@ export class Carousel extends Component {
     componentDidMount() {
         console.log('Component did mount block!')
         const fetchAPI = async () => {
-            this.setState({news: await getNews()})
-            console.log('We successfully made a request. -Logged from componentDidMount')
+            this.setState({news: await getNYTNews()})
+            //console.log('We successfully made a request. -Logged from componentDidMount')
         }
         fetchAPI()
-        console.log('End of componentDidMount!')
-        console.log('----------------')
+        //console.log('End of componentDidMount!')
+        //console.log('----------------')
 
         window.setInterval(() => this.updateActive(), 5000)
     }
 
     render() {
         let {news, active} = this.state;
-        //console.log(this.state.news[this.state.active%this.state.news.length].urlToImage.startsWith('https') ? this.state.news[this.state.active%this.state.news.length].urlToImage : genericImage)
-        
+        let currentNew = news[active%news.length]
+        //let main = currentNew.headline.main
+        //let print_hline = currentNew.headline.print_head
+
         if(news.length > 2){
             return (
                 <div className={styles.slidecontainer}>
-                    <a rel="noreferrer" target="_blank" href={news[active%news.length].url}>
+                    <a rel="noreferrer" target="_blank" href={currentNew.web_url}>
                         <div id='slider'>
-                            <img className={styles.slidephoto} alt='foto da noticia'
-                                src={news[active%news.length].urlToImage.startsWith('https') ? news[active%news.length].urlToImage : genericImage}
+                            <img className={styles.slidephoto} alt='Imagem ilustrativa da notícia.'
+                                src={('https://www.nytimes.com/' + currentNew.multimedia[9].url) || genericImage}
                                 name='slide' 
                             />
-                            <p className={styles.newsText}>{news[active%(news.length)].title}</p>
+                            <p className={styles.newsText}>{currentNew.headline.main}</p>
                             
                         
                         </div>

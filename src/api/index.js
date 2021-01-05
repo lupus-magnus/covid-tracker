@@ -60,3 +60,22 @@ export const getNews = async () => {
     console.log ('modifiedData: ', modifiedData)
     return (modifiedData)
 }
+
+//Seção de API das notícias usando o New York Times.
+
+let nytUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=corona&sort=newest&api-key=YYixc9rfwwSnyP5EQMbQJAAK6C8DpAt2'
+
+export const getNYTNews = async () => {
+    const response = await fetch(nytUrl)
+    console.log('----------------------------')
+    console.log('A request was just made to the New York Times API.')
+    const data = await response.json()
+    console.log('NewYorkTimes response: ', data)
+    const news = await data.response.docs
+    console.log('NewYorkTimes news: ',news)
+    const finalData = news.slice(0,4)
+    console.log('NYT final data:', finalData)
+    console.log('----------------------------')
+    return(finalData)
+    
+}

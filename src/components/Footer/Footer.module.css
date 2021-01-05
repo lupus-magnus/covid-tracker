@@ -1,6 +1,7 @@
 .footer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     vertical-align: middle !important;
+    padding: 20px;
 }
 
