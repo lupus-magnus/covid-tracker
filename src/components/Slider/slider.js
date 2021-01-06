@@ -28,7 +28,7 @@ export class Carousel extends Component {
         //console.log('End of componentDidMount!')
         //console.log('----------------')
 
-        window.setInterval(() => this.updateActive(), 5000)
+        window.setInterval(() => this.updateActive(), 7500)
     }
 
     render() {

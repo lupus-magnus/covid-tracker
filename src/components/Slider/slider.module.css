@@ -11,7 +11,7 @@
     /*box-shadow: 7px 5px 5px #333;*/
     margin: 5px !important;
 }
-  
+
 .slidephoto{
     width: 100% !important;
     height: 300px !important;
@@ -31,4 +31,5 @@
     border-radius: 3px;
     box-shadow: 4px 3px 4px white;
     margin: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

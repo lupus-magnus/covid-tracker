@@ -63,7 +63,7 @@ export const getNews = async () => {
 
 //Seção de API das notícias usando o New York Times.
 
-let nytUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=corona&sort=newest&api-key=YYixc9rfwwSnyP5EQMbQJAAK6C8DpAt2'
+let nytUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=corona+virus&sort=newest&api-key=YYixc9rfwwSnyP5EQMbQJAAK6C8DpAt2'
 
 export const getNYTNews = async () => {
     const response = await fetch(nytUrl)
